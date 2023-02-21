@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+    int M = 0; //최대값
+    int N; //과목의 개수
+    
+    scanf("%d", &N);
+    
+    float subject[N];
+    
+    for(int i=0; i<N; i++)
+        scanf("%f", &subject[i]);
+    
+    for(int i=0; i<N; i++) {
+        if (subject[i] > M)
+            M = subject[i];
+    }
+    
+    float avg = 0;
+    
+    for(int i=0; i<N; i++) {
+        subject[i] = subject[i]/M*100;
+        avg += subject[i];
+    }
+    
+    avg /= N;
+
+    printf("%lf", avg);
+    
+    return 0;
+}
